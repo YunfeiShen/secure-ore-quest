@@ -15,13 +15,13 @@ Create a `.env.local` file with the following variables:
 ```env
 # Chain Configuration
 VITE_CHAIN_ID=11155111
-VITE_RPC_URL=https://sepolia.infura.io/v3/b18fb7e6ca7045ac83c41157ab93f990
+VITE_RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
 
 # Wallet Connect Configuration
-VITE_WALLET_CONNECT_PROJECT_ID=2ec9743d0d0cd7fb94dee1a7e6d33475
+VITE_WALLET_CONNECT_PROJECT_ID=YOUR_WALLET_CONNECT_PROJECT_ID
 
 # Infura Configuration (Optional)
-VITE_INFURA_API_KEY=b18fb7e6ca7045ac83c41157ab93f990
+VITE_INFURA_API_KEY=YOUR_INFURA_API_KEY
 VITE_RPC_URL=https://1rpc.io/sepolia
 ```
 
@@ -51,9 +51,9 @@ VITE_RPC_URL=https://1rpc.io/sepolia
    - Go to "Environment Variables" section
    - Add each variable from your `.env.local` file:
      - `VITE_CHAIN_ID` = `11155111`
-     - `VITE_RPC_URL` = `https://sepolia.infura.io/v3/b18fb7e6ca7045ac83c41157ab93f990`
-     - `VITE_WALLET_CONNECT_PROJECT_ID` = `2ec9743d0d0cd7fb94dee1a7e6d33475`
-     - `VITE_INFURA_API_KEY` = `b18fb7e6ca7045ac83c41157ab93f990`
+     - `VITE_RPC_URL` = `https://sepolia.infura.io/v3/YOUR_INFURA_KEY`
+     - `VITE_WALLET_CONNECT_PROJECT_ID` = `YOUR_WALLET_CONNECT_PROJECT_ID`
+     - `VITE_INFURA_API_KEY` = `YOUR_INFURA_API_KEY`
 
 5. **Deploy**
    - Click "Deploy" button
@@ -139,8 +139,8 @@ All environment variables must be prefixed with `VITE_` to be accessible in the 
 
 ### Network Configuration
 - **Chain ID**: 11155111 (Sepolia testnet)
-- **RPC URL**: Infura Sepolia endpoint
-- **Wallet Connect**: Project ID for wallet connections
+- **RPC URL**: Your configured RPC endpoint
+- **Wallet Connect**: Your project ID for wallet connections
 
 ## Troubleshooting
 

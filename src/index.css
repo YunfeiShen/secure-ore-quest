@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Mining Quest Dark Theme */
+    --background: 220 15% 8%;
+    --foreground: 45 100% 85%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 45 100% 85%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 45 100% 85%;
+
+    --primary: 45 100% 50%;
+    --primary-foreground: 220 15% 8%;
+
+    --secondary: 220 25% 18%;
+    --secondary-foreground: 45 100% 85%;
+
+    --muted: 220 25% 15%;
+    --muted-foreground: 45 50% 65%;
+
+    --accent: 120 80% 45%;
+    --accent-foreground: 220 15% 8%;
+
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 45 100% 85%;
+
+    --border: 220 25% 20%;
+    --input: 220 25% 18%;
+    --ring: 45 100% 50%;
+
+    /* Mining Game Colors */
+    --gold: 45 100% 50%;
+    --gold-glow: 45 100% 60%;
+    --emerald: 120 80% 45%;
+    --emerald-glow: 120 90% 55%;
+    --ruby: 0 80% 55%;
+    --ruby-glow: 0 90% 65%;
+    --sapphire: 220 80% 60%;
+    --sapphire-glow: 220 90% 70%;
+    --diamond: 0 0% 90%;
+    --diamond-glow: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-mine: linear-gradient(180deg, hsl(220 20% 15%), hsl(220 25% 8%));
+    --gradient-ore: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-glow)));
+    --gradient-emerald: linear-gradient(135deg, hsl(var(--emerald)), hsl(var(--emerald-glow)));
+    --gradient-ruby: linear-gradient(135deg, hsl(var(--ruby)), hsl(var(--ruby-glow)));
+
+    /* Shadows & Effects */
+    --shadow-glow: 0 0 20px hsl(var(--gold) / 0.4);
+    --shadow-emerald: 0 0 20px hsl(var(--emerald) / 0.4);
+    --shadow-ruby: 0 0 20px hsl(var(--ruby) / 0.4);
+
+    /* Pixel perfect borders */
+    --pixel-border: 2px solid hsl(var(--border));
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  /* Pixel Font Import */
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&display=swap');
+  
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Press Start 2P', monospace;
+  }
+
+  /* Pixel-perfect elements */
+  .pixel-border {
+    border: var(--pixel-border);
+    image-rendering: pixelated;
+  }
+
+  .pixel-font {
+    font-family: 'Press Start 2P', monospace;
+  }
+
+  .orbitron-font {
+    font-family: 'Orbitron', monospace;
+  }
+
+  /* Animations */
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: var(--shadow-glow); }
+    50% { box-shadow: 0 0 30px hsl(var(--gold) / 0.6); }
+  }
+
+  @keyframes emerald-pulse {
+    0%, 100% { box-shadow: var(--shadow-emerald); }
+    50% { box-shadow: 0 0 30px hsl(var(--emerald) / 0.6); }
+  }
+
+  @keyframes mine-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+  }
+
+  @keyframes ore-sparkle {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  .glow-animation {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .emerald-glow {
+    animation: emerald-pulse 2s ease-in-out infinite;
+  }
+
+  .mine-shake {
+    animation: mine-shake 0.3s ease-in-out;
+  }
+
+  .ore-sparkle {
+    animation: ore-sparkle 1.5s ease-in-out infinite;
+  }
+}
